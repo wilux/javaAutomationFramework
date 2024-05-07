@@ -1,11 +1,11 @@
 package steps;
-import utils.BrowserSelector;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
+import utils.BrowserSelector;
 
 
-public class BaseStep {
+public class Environment {
     public static WebDriver driver;
 
     @Before
