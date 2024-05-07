@@ -20,7 +20,10 @@ public class BrowserSelector {
 
     public static WebDriver selectBrowser(String browserName, String[] options) {
         if (browserName == null || browserName.isEmpty()) {
-            browserName = "firefox";
+            browserName = "edge";
+        }
+        if (options == null || options.length == 0) {
+            options = new String[]{"--a"};
         }
         browserName = browserName.toLowerCase();
 
