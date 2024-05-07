@@ -15,14 +15,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class HomeSteps {
 
     private WebDriver driver = Environment.driver;
-    @Given("The user opens {}")
-    @Step("The user opens {}")
+    @Given("The user opens '{}'")
+    @Step("The user opens '{}'")
     public void openUrl(String url) {
         driver.get(url);
     }
 
-    @Then("The user sees {} title")
-    @Step("The user sees {} title")
+    @Then("The user sees '{}' title")
+    @Step("The user sees '{}' title")
     public void verifyPageTitle(String expectedTitle) {
         WebElement titleElement = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector( ".post-2715 > div:nth-of-type(1) h2")));
