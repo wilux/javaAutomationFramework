@@ -36,7 +36,7 @@
     </resources>
     <testResources>
       <testResource>
-        <directory>tests</directory>
+        <directory>test</directory>
         <excludes>
           <exclude>**/*.java</exclude>
         </excludes>

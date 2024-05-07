@@ -1,10 +1,9 @@
-package tests.steps;
-
+package steps;
+import utils.BrowserSelector;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 
-import static tests.utils.BrowserSelector.selectBrowser;
 
 public class BaseStep {
     public static WebDriver driver;
@@ -17,7 +16,7 @@ public class BaseStep {
         if (options != null) {
             optionsList = options.split(",");
         }
-        driver = selectBrowser(browserName, optionsList);
+        driver = BrowserSelector.selectBrowser(browserName, optionsList);
 
     }
 
