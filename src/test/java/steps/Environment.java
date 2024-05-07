@@ -1,6 +1,10 @@
 package steps;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.qameta.allure.Attachment;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import utils.BrowserSelector;
 
@@ -18,6 +22,12 @@ public class Environment {
         }
         driver = BrowserSelector.selectBrowser(browserName, optionsList);
 
+    }
+
+    @AfterStep
+    @Attachment(value = "Screenshot", type = "image/png")
+    public byte[] screenshot() {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
     @After
