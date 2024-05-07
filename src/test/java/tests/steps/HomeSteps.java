@@ -1,15 +1,12 @@
 package tests.steps;
-
-
 import io.cucumber.java.en.Given;
+import org.openqa.selenium.WebDriver;
 
-public class HomeSteps extends BaseStep {
+public class HomeSteps {
 
-    public HomeSteps() {
-    }
+    private WebDriver driver = BaseStep.driver;
 
-
-    @Given("^The user opens pepe")
+    @Given("The user opens pepe")
     public void openUrl() {
         driver.get("https://www.globalsqa.com/demo-site/");
     }
