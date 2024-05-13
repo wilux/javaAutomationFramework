@@ -3,11 +3,14 @@ import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import utils.BrowserSelector;
+
+import java.io.ByteArrayInputStream;
 
 
 public class Environment {
@@ -28,15 +31,8 @@ public class Environment {
     @AfterStep
     public void afterStep(Scenario scenario) {
 //        if (scenario.isFailed()) {
-//            screenshot();
 //        }
-        screenshot();
-    }
-
-
-    @Attachment(value = "Screenshot", type = "image/png")
-    public byte[] screenshot( ) {
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("Screenshot", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
 
     @After
