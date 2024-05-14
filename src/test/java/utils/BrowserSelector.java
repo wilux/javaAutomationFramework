@@ -17,7 +17,7 @@ public class BrowserSelector {
             browserName = "chrome";
         }
         if (options == null || options.length == 0) {
-            options = new String[]{"--headless"};
+            options = new String[]{"--a"};
         }
         browserName = browserName.toLowerCase();
 

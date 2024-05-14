@@ -112,12 +112,6 @@
       <artifactId>allure-junit5</artifactId>
       <scope>test</scope>
     </dependency>
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-opera-driver &ndash;&gt;-->
-<!--    <dependency>-->
-<!--      <groupId>org.seleniumhq.selenium</groupId>-->
-<!--      <artifactId>selenium-opera-driver</artifactId>-->
-<!--      <version>4.4.0</version>-->
-<!--    </dependency>-->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
