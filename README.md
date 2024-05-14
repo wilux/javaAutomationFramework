@@ -12,11 +12,10 @@ Java, and the TestNG testing framework from the command line.
 Navigate to Project Directory: Open a command prompt or terminal and navigate to your project's directory.
 
 
-#### Individual Test Methods: Execute a specific test method within a class using
+#### Browser selector & Options
 
-mvn test -Dtest=MyTestClass#testMethod1
+mvn test -Dbrowser=firefox -Doptions=--headless
 
-
-#### All Test Methods
+#### All Test Methods Default
 
 mvn test
