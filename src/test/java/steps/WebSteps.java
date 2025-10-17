@@ -1,21 +1,21 @@
 package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import steps.hooks.WebHooks;
 
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class HomeSteps {
+public class WebSteps {
 
-    private WebDriver driver = Environment.driver;
+    private WebDriver driver = WebHooks.driver;
     @Given("The user opens '{}'")
     @Step("The user opens '{url}'")
     public void openUrl(String url) {

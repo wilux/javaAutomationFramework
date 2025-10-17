@@ -1,3 +1,4 @@
+@web
 Feature: Testing DEMO global SQA site
 
   Scenario: The user opens successfully DEMO global SQA site
