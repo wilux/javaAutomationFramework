@@ -11,7 +11,8 @@ import steps.hooks.*;
 
 import java.time.Duration;
 
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 
 public class MobileSteps {
 
@@ -35,6 +36,6 @@ public class MobileSteps {
         );
 
 
-        assertNotNull("Login screen not visible, user might not be logged out", feedElement);
+        assertNotNull(feedElement, "Login screen not visible, user might not be logged out");
     }
 }

@@ -6,10 +6,9 @@ import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
-import io.qameta.allure.Allure;
+import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 
-import java.io.ByteArrayInputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -33,11 +32,14 @@ public class MobileHooks {
     }
 
 
+    @Attachment(value = "Screenshot", type = "image/png")
+    public byte[] takeScreenshot() {
+        return driver.getScreenshotAs(OutputType.BYTES);
+    }
+
     @AfterStep("@mobile")
     public void afterStep(Scenario scenario) {
-//        if (scenario.isFailed()) {
-//        }
-        Allure.addAttachment("Screenshot", new ByteArrayInputStream(driver.getScreenshotAs(OutputType.BYTES)));
+        takeScreenshot();
     }
 
     @After("@mobile")

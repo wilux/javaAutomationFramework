@@ -1,4 +1,5 @@
 package steps.hooks;
+
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
@@ -19,7 +20,7 @@ public class WebHooks {
     public void setup() {
         String browserName = System.getProperty("browser");
         String options = System.getProperty("options");
-        String[] optionsList = null;
+        String[] optionsList = new String[]{"--headless=new", "--window-size=1920,1080"};
         if (options != null) {
             optionsList = options.split(",");
         }
